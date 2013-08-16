@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Taschenrechner</title>
+</head>
+
+<body>
+<form>
+    <p>
+        <input id="txt_Val1" type="text" value = "0" />
+    </p>
+    <p>
+        <input id="txt_Operator" type="text" />
+    </p>
+    <p>
+        <input id="txt_Val2" type="text" />
+    </p>
+    <p>
+        <input id="txt_Result" type="text" />
+    </p>
+</form>
+<script src="mySecondScript.js"></script>
+<script> 
+var ersterWert, zweiterWert, Ergebnis;
+var Operator;
+document.getElementById('txt_Val1').addEventListener('blur', function() {
+  ersterWert = parseInt(this.value);
+});
+
+document.getElementById('txt_Operator').addEventListener('blur', function() {
+  Operator = this.value;
+});
+
+document.getElementById('txt_Val2').addEventListener('blur', function() {
+ zweiterWert = parseInt(this.value);
+
+  switch(Operator)
+  {
+  case '-':
+    Ergebnis = ersterWert - zweiterWert;
+    break;
+  case '+':
+    Ergebnis = ersterWert + zweiterWert;
+    break;
+  case '*':
+    Ergebnis = ersterWert * zweiterWert;
+    break;
+  case '/':
+    Ergebnis = ersterWert / zweiterWert;
+    break;  
+  default:
+    alert('Falscher Operator!');
+  }
+
+document.getElementById('txt_Result').value=Ergebnis;
+});
+</script>
+</body>
+</html>
+

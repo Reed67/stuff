@@ -1,0 +1,40 @@
+Formular 
+mit JS 2 Textfelder id, name, und 2 buttons submit, abbrechen
+jedes element per js folgende attribute erhlaten: id, name, class, title
+buttons sollen mit js als events
+abbrechen per alert
+
+<html>
+<head>
+<title>
+Uebung
+</title>
+<body>
+
+<script>
+var formular = document.createElement('form');
+document.body.appendChild(formular);
+var input = [];
+for (i=1; i<5; i++) {
+	input[i] = document.createElement('input');
+	input[i].setAttribute('id', 'input'+i);
+	if (i<3) {
+		input[i].setAttribute('type', 'text');
+	}
+	else {
+		input[i].setAttribute('type', 'button')
+		if (i==3) {
+			input[i].setAttribute('value', 'submit')
+		}
+		else {
+			input[i].setAttribute('value', 'cancel')
+		}
+	      }
+	formular.appendChild(input[i])
+	
+};
+</script>
+
+</body>
+</head>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Unbenanntes Dokument</title>
+<style>
+.meineKLasse{}
+</style>
+</head>
+
+<body>
+
+
+<p id='meinAbsatz1'><img id='img_report' src="bericht.png" width="66" height="66" alt="report" /></p>
+<p id='meinAbsatz2' class="meineKLasse"><img id='img_camera' src="camera.png" width="48" height="48" alt="camera" /></p>
+<p id='meinAbsatz3'><img id='img_form' src="formular.png" width="48" height="48" alt="camera" /></p><p id='meinAbsatz4'><img src="globe.png" width="48" height="48" alt="globe" /></p>
+<p id='meinAbsatz5'>
+  <img src="headset.png" width="48" height="48" alt="headset" /><img src="headset.png" width="48" height="48" alt="headset" /><img src="headset.png" width="48" height="48" alt="headset" /></p>
+<p id='meinAbsatz6'><img src="speaker.png" width="48" height="48" alt="speaker" /></p>
+<p id='meinAbsatz7' class="meineKLasse"><img src="view.png" width="48" height="48" alt="view" /></p>
+<input id='button_countImages' type='button' value='Hier klicken zur Anzeige der Anzahl der Bilder!' />
+<p>&nbsp; </p>
+<script>
+/*console.log(document.getElementById('img_camera'));
+console.log(document.getElementById('meinAbsatz'));
+console.log(document.getElementsByTagName('img')[4]);
+console.log(document.getElementsByClassName('meineKLasse'));*/
+var myNode = document.getElementById("meinAbsatz4");
+/*console.log(myNode.firstChild);
+console.log(myNode.lastChild);*/
+console.log(myNode.previousSibling);
+console.log(myNode.nextSibling);
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Übung mit HTML-Elementen</title>
+    <meta name="description" content="Übung mit HTML-Elementen">
+    <meta name="author" content="Olaf Thiele">
+    <meta name="keywords" content="">
+<!--
+    <link href="style.css" type="text/css" rel="stylesheet">
+-->
+</head>
+<body>
+<div id="bas">
+    <div id="abs_1">Absatz 1</div>
+    <div id="abs_2">Absatz 2</div>
+    <div id="abs_3">Absatz 3</div>
+</div>
+
+
+<input type="button" id="NewEl" value="Neues Element am Ende" />
+<input type="button" id="NewElBefore" value="Neues Element an bestimmter Position" />
+<input type="button" id="ReplaceEl" value="Element ersetzen" />
+<input type="button" id="RemoveEl" value="Element löschen" />
+<input type="button" id="KomplexEl" value="Elementgruppe" />
+<script>
+
+/*
+    neues Element erzeugen und am Ende einhaengen 
+*/
+function NewEl() {
+    var myNewElement=document.createElement('div');
+    myNewElement.id = 'abs_4';
+    myNewElement.innerHTML = 'Absatz 4';
+    document.getElementById('bas').appendChild(myNewElement);
+}
+document.getElementById('NewEl').addEventListener('click', function(){NewEl()});
+
+/* 
+    neues Element erzeugen und an bestimmter Position einhaengen 
+*/
+function newElementBefore() {
+    var myNewElement=document.createElement('div');
+    myNewElement.id = 'abs_4';
+    myNewElement.innerHTML = 'Absatz 4';
+    document.getElementById('bas').insertBefore(myNewElement, document.getElementById('abs_2'));
+}
+document.getElementById('NewElBefore').addEventListener('click', function(){newElementBefore()});
+
+/* 
+    neues Element erzeugen und ein Kindelement ersetzen 
+*/
+function ReplaceEl() {
+    var myNewElement=document.createElement('div');
+    myNewElement.id = 'abs_4';
+    myNewElement.innerHTML = 'Absatz 4';
+    document.getElementById('bas').replaceChild(myNewElement, document.getElementById('abs_2'));
+}
+document.getElementById('ReplaceEl').addEventListener('click', function(){ReplaceEl()});
+
+/* 
+    Element loeschen 
+*/
+function RemoveEl() {
+    var node = document.getElementById('bas');
+    node.removeChild(document.getElementById('abs_2'));
+}
+document.getElementById('RemoveEl').addEventListener('click', function(){RemoveEl()});
+
+/* 
+    koplexes Beispiel
+*/
+function KomplexEl() {
+    var myNewElementOL = document.createElement('ol');
+    var myNewElementLE1 = document.createElement('li');
+    var myNewElementLE2 = document.createElement('li');
+    var myNewElementLE3 = document.createElement('li');
+    myNewElementLE1.innerText = 'Tagesordnungspunkt';
+    myNewElementLE2.innerText = 'Tagesordnungspunkt';
+    myNewElementLE3.innerText = 'Tagesordnungspunkt';
+    myNewElementOL.appendChild(myNewElementLE1);
+    myNewElementOL.appendChild(myNewElementLE2);
+    myNewElementOL.appendChild(myNewElementLE3);
+    document.getElementById('abs_1').appendChild(myNewElementOL);
+}
+document.getElementById('KomplexEl').addEventListener('click', function(){KomplexEl()});
+</script>
+</body>
+</html>

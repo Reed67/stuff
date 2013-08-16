@@ -1,0 +1,1 @@
+var myProt = new Object();

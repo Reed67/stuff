@@ -1,0 +1,17 @@
+function Person (LastName, FirstName) {
+    var that = this;
+    this.Name = LastName;
+    this.FName = FirstName;
+    /* globale Methode wird zu Methode des Windowobjektes */
+    myFunction = function() {
+        console.log(this.Name);
+        console.log(that.Name);
+        console.log(this);
+    }
+}
+var Salesman = new Person('Mustermann', 'Max');
+console.log(Salesman);
+/* funtioniert */
+window.myFunction();
+/* funtioniert nicht myFunction ist keine Methode von Person */
+Salesman.myFunction();

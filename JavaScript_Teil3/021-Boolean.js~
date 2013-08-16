@@ -1,0 +1,7 @@
+var myBool = true;
+console.log(myBool);
+myBool = new Boolean(true);
+console.log(myBool);
+console.log( myBool.toString() );
+myBool = new Boolean(false);
+console.log( myBool.toString() );

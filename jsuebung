@@ -1,0 +1,73 @@
+/*
+Formular
+erzeugen mit js zwei textefelder id,name und zwei buttons(submit und abbrechen
+jedes element soll per js folgende attribute erhalten - id 
+							name
+							class
+							titel
+
+buttons sollen mit js als events angelegt werden submit - m,it submit event, 
+abbrechen mit abbrechen event
+
+*/
+
+<html>
+  <head>
+    <title>TEST JS</title>
+    <meta charset="UTF-8">
+    <style></style>
+  </head>
+  <body>
+<div id="basic">
+
+</div>
+
+<div id="abs_1">
+
+</div>
+
+<div id="abs_2">
+
+</div>
+
+  </body>
+<script>
+
+
+var el=document.createElement('input');
+el.id='id';
+el.name='Textfeld';
+el.class='Class';
+el.titel='itel';
+
+
+/*
+function TextNodeId() {
+    var tNodeId = document.createTextNode('id');
+    document.getElementById('abs_1').firstChild.appendData(tNode.nodeValue);
+			}
+
+function TextNodeName() {
+    var tNodeName = document.createTextNode('name');
+    document.getElementById('abs_2').firstChild.appendData(tNode.nodeValue);
+			}
+
+document.getElementById('abs_1').addEventListener('click', function(){TextNodeId()});
+
+<input type="button" id="abs_1" value="erstellen" />
+
+function ErstesEreignis() {
+    alert('Zuerst zugeordnetes Ereignis');
+
+
+document.getElementById('AddEvent').addEventListener('click', function(){
+        document.getElementById('ButResult').addEventListener('click', function(){
+            ErstesEreignis();
+
+<input type="submit" value="Submit">
+*/
+</script>
+
+
+
+</html>

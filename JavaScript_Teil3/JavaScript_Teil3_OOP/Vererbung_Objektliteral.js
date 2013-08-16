@@ -1,0 +1,21 @@
+var Basisklasse = new Object;
+Basisklasse.valX = 10;
+Basisklasse.valY = 20;
+Basisklasse.meth = function() {return this.valX * this.valY};
+var Instanz1 = Object.create(Basisklasse);
+console.log(Instanz1.valX);
+console.log(Instanz1.valY);
+console.log(Instanz1.meth);
+console.log(Instanz1.meth());
+var Instanz2 = Object.create(Basisklasse);
+Instanz2.valX = 40;
+Instanz2.meth = function() {return this.valX / this.valY};
+console.log(Instanz1.meth);
+console.log(Instanz1.valX);
+console.log(Instanz2.valX);
+console.log(Instanz2.valY);
+console.log(Instanz2.meth);
+console.log(Instanz2.meth());
+Basisklasse.meth2=function(){return Math.PI}
+console.log(Instanz1.meth2);
+console.log(Instanz2.meth2);

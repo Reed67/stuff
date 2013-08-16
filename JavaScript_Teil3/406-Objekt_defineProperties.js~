@@ -1,0 +1,18 @@
+var Person = {}
+Object.defineProperties(Person,
+    {
+    'age': {
+        writable: true,
+        enumerable: true,
+        configurable: true,
+        value: 18
+        }
+    'birthday': {
+        writable: true,
+        enumerable: true,
+        configurable: false,
+        value: function() {alert(10)}
+        }
+    }
+);
+console.log(Person.age);

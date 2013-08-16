@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Übung Navigation parent - child</title>
+    <meta name="description" content="Übung Navigation parent - child">
+    <meta name="author" content="Olaf Thiele">
+    <meta name="keywords" content="">
+<!--
+    <link href="style.css" type="text/css" rel="stylesheet">
+-->
+</head>
+<body>
+<div id="bas">
+    <div id="abs_1">
+        <ol id="olist">
+            <li id="olist_item_1">Absatz</li>
+            <li id="olist_item_2">Absatz</li>
+            <li id="olist_item_3">Absatz</li>
+        </ol>
+        <ul id="ulist">
+            <li id="ulist_item_1">1. Absatz</li>
+            <li id="ulist_item_1">2. Absatz</li>
+            <li id="ulist_item_1">3. Absatz</li>
+        </ul>
+    </div>
+    <div id="abs_2">Abschnitt 2</div><div id="abs_3">Abschnitt 3</div>
+</div>
+
+
+<input type="button" id="SelEl" value="zu <ol> navigieren" />
+<input type="button" id="SelParentEl" value="zu parent von <ol> navigieren" />
+<input type="button" id="allChildEl" value="alle Kindknoten von <div id='bas'>" />
+<input type="button" id="firstChEl" value="erster Kindknoten von <div id='bas'>" />
+<input type="button" id="lastChEl" value="letzter Kindknoten von <div id='bas'>" />
+<script>
+
+/*
+    zu id 'olist' navigieren 
+*/
+function SelEl() {
+    var myOLNode = document.getElementById('olist')
+    console.log(myOLNode.innerHTML);
+}
+document.getElementById('SelEl').addEventListener('click', function(){SelEl()});
+
+/* 
+    zu parent von 'olist' navigieren
+*/
+function SelParentEl() {
+    var myOLNode = document.getElementById('olist')
+    console.log(myOLNode.parentNode.id);
+}
+document.getElementById('SelParentEl').addEventListener('click', function(){SelParentEl()});
+
+/* 
+   alle Kindknoten von <div id='bas'>
+*/
+function allChildEl() {
+    var myOLNode = document.getElementById('bas')
+    console.log(myOLNode.childNodes);
+}
+document.getElementById('allChildEl').addEventListener('click', function(){allChildEl()});
+
+/* 
+   erster Kindknoten von <div id='bas'>
+*/
+function firstChEl() {
+    var myOLNode = document.getElementById('bas')
+    console.log(myOLNode.firstChild);
+    console.log('ist das <CR> + 4 Leerzeichen zwischen bas und abs_1');
+}
+document.getElementById('firstChEl').addEventListener('click', function(){firstChEl()});
+/* 
+   letzter Kindknoten von <div id='bas'>
+*/
+function lastChEl() {
+    var myOLNode = document.getElementById('bas')
+    console.log(myOLNode.lastChild);
+    console.log('ist das <CR> zwischen Ende von abs_3 und abschliessendem </div>');
+}
+document.getElementById('lastChEl').addEventListener('click', function(){lastChEl()});
+
+</script>
+</body>
+</html>

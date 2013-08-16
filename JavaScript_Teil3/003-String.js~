@@ -1,0 +1,30 @@
+/* number to string */
+var myStr = String (24);
+console.log(myStr);
+myStr = '' + 24;
+console.log(myStr);
+myStr = (24).toString();        /* Basis 10 */
+console.log(myStr);
+myStr = (24).toString(2);      /* Basis 2 */
+console.log(myStr);
+myStr = (24).toString(15);   // "38" (hexadecimal)
+console.log(myStr);
+myStr = (24).toString(36);   // "1k" (base of 36)
+console.log(myStr);
+
+    // array to string
+var arr = [10, -2, 20];
+var str = String (arr);     // "10,-2,20"
+var str = "" + arr;         // "10,-2,20"
+var str = arr.toString ();  // "10,-2,20"
+var str = arr.join (" + "); // "10 + -2 + 20"
+
+    // others
+var str = String (true);        // "true"
+var str = "" + true;            // "true"
+var str = String (false);       // "false"
+var str = "" + false;           // "false"
+var str = String (null);        // "null"
+var str = "" + null;            // "null"
+var str = String (undefined);   // "undefined"
+var str = "" + undefined;       // "undefined"

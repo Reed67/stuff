@@ -1,0 +1,28 @@
+var Person = {
+    name: 'name',
+    firstname: 'firstname',
+    age: 18
+}
+var str = JSON.stringify(Person);
+console.log(str);
+/* liefert
+{"name":"name","firstname":"firstname","age":18}
+*/
+var tmpArr = [
+                ['First', 'Second', 'Third']
+               , ['4', '5', '6']
+               , ['Max', 'Susi', 'Jana']
+
+            ];
+var str = JSON.stringify(tmpArr);
+console.log(str);
+/* liefert
+[["First","Second","Third"],["4","5","6"],["Max","Susi","Jana"]]
+*/
+var toLower = function(key, val) {return val.toString().toLowerCase()}
+var str = JSON.stringify(tmpArr, toLower);
+console.log(str);
+/* liefert
+"first,second,third,4,5,6,max,susi,jana"
+*/
+

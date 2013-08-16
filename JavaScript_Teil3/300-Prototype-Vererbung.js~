@@ -1,0 +1,24 @@
+function Person (LastName, FirstName) {
+    this.Name = LastName;
+    this.FName = FirstName;
+}
+function Employee(LastName, FirstName, Dep) {   
+    this.constructor(LastName, FirstName);
+    this.Department = Dep;
+}
+Employee.prototype = new Person();
+
+var Salesman = new Employee('Mustermann', 'Max', 'Sale');
+console.log(Salesman);
+var Manager = new Employee('Schuster', 'Hans', 'Management');
+console.log(Manager);
+console.log(Salesman.hasOwnProperty('Name'));
+console.log(Manager.hasOwnProperty('Name'));
+
+Employee.prototype.Age = null;
+Salesman.Age = 37;
+Manager.Age = 40;
+console.log(Salesman);
+console.log(Manager);
+console.log(Salesman.hasOwnProperty('Age'));
+console.log(Manager.hasOwnProperty('Age'));

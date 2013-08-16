@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML_Seite Elemente listen</title>
+    <meta charset="UTF-8">
+    <script>
+    function liste_unterknoten(knoten) {
+        var ausgabe;
+        ausgabe = '<li>';
+        switch (knoten.nodeType) {
+            case 1 :
+                ausgabe += '<strong>' + knoten.nodeName + '<\/strong>-Element';
+                if (knoten.hasChildNodes()) {
+                    ausgabe += ', ' + knoten.childNodes.length + ' Unterknoten';
+                }
+                break;
+            case 3 :
+                var knotenwert = knoten.nodeValue.replace(/</g, '&lt;').replace(/\n/g, '\\n');
+                ausgabe += 'Textknoten: [<strong>' + knotenwert + '<\/strong>]';
+                break;
+            case 8 :
+                var knotenwert = knoten.nodeValue.replace(/</g, '&lt;').replace(/\n/g, '\\n');
+                ausgabe += 'Kommentarknoten: [' + knotenwert + ']';
+                break;
+            default :
+                ausgabe += 'Knoten des Typs ' + knoten.nodeType +
+                    ', Wert: [' + knoten.nodeValue + ']';
+        }
+        if (knoten.hasChildNodes()) {
+            ausgabe += '\n<ol>\n';
+            for (var i = 0; i < knoten.childNodes.length; i++) {
+                knotenneu = knoten.childNodes[i];
+                ausgabe += liste_unterknoten(knotenneu); // Rekursion
+            }
+            ausgabe += '</ol>\n';
+        }
+        ausgabe += '</li>\n';
+        return ausgabe;
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>hallo welt</h1>
+    </header> 
+    <nav>
+        <menu>
+            <li>Link 1</li>
+            <li>Link 2</li>
+        </menu>
+    </nav>
+    <section>
+        <h1>titel section</h1>    
+        <article id="fst_article">
+            <h1>titel artikel 1</h1>
+            <p>Das ist ein Absatz</p>
+            <p>Und dies ist auch ein Absatz</p>
+        </article>
+        <article id="scd_article">
+            <h1>titel artikel 2</h1>
+            <ol>
+                <li>Listeneintrag 1</li>
+                <li>Listeneintrag 2</li>
+            </ol>
+            <p>Und dies ist auch ein Absatz</p>
+        </article>
+    </section>
+    <aside>
+        <h1>titel sidebar</h1>
+    </aside>
+    <footer>
+        <h1>das ist ein footer</h1>
+    </footer>
+    <script>
+        document.write(liste_unterknoten(document));
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+function useStrictModeWrong() {
+    'use strict';
+    x = 1;
+}
+function useStrictModeRight() {
+    'use strict';
+    var x = 1;
+}

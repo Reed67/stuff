@@ -1,0 +1,63 @@
+Formular
+erzeugen mit JS zwei Textfelder (id,name)und zwei buttons(Submit, Abbrechen)
+jedes Element soll per JS folgende Attribute erhalen: id, name, class, title 
+
+Buttons sollen mit JS als Events angelegt werden
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Uebung</title>
+  </head>
+  <body>
+ 
+
+
+
+ <script>
+var form=document.createElement('form');
+
+var el=document.createElement('input');
+el.setAttribute('type', 'text')
+el.setAttribute('id', '1')
+form.appendChild(el);
+var el=document.createElement('input');
+el.setAttribute('type', 'text')
+el.setAttribute('id', '2')
+form.appendChild(el);
+var el=document.createElement('input');
+el.setAttribute('id', '3')
+el.setAttribute('type', 'button')
+el.setAttribute('value', 'submit')
+form.appendChild(el);
+var el=document.createElement('input');
+el.setAttribute('id', '4')
+el.setAttribute('type', 'button')
+el.setAttribute('value', 'Reset')
+form.appendChild(el);
+document.body.appendChild(form);
+
+document.getElementById('4').addEventListener('click', function(){
+         erstesEreignis();
+          });
+function erstesEreignis(){
+el=document.getElementById('1');
+el.value = '';
+el=document.getElementById('2');
+el.value= '';
+}
+
+document.getElementById('3').addEventListener('click', function(){
+         absenden();
+          });
+function absenden(){
+el1=document.getElementById('1').value;
+el2=document.getElementById('2').value;
+alert('Abgesendet '+el1+' '+el2);
+
+}
+
+</script>
+</body>
+</html>
+ 

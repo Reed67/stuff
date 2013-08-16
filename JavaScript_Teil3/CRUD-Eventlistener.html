@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Übung mit Events</title>
+    <meta name="description" content="Übung mit HTML-Elementen">
+    <meta name="author" content="Olaf Thiele">
+    <meta name="keywords" content="">
+<!--
+    <link href="style.css" type="text/css" rel="stylesheet">
+-->
+</head>
+<body>
+<div id="bas">
+    <div id="abs_1">Absatz 1</div>
+    <div id="abs_2">Absatz 2</div>
+    <div id="abs_3">Absatz 3</div>
+</div>
+
+
+<input type="button" id="ButResult" value="Ergebnisbutton" />
+<input type="button" id="AddEvent" value="neues Event mit onclick" />
+<input type="button" id="RemoveEv" value="Event löschen" />
+<script>
+/*
+    
+*/
+function ErstesEreignis() {
+    alert('Zuerst zugeordnetes Ereignis');
+}
+var listener = function (event) {
+  alert('Zweites zugeordnetes Ereignis');
+};
+function DrittesEreignis() {
+    alert('Drittes zugeordnetes Ereignis');
+}
+document.getElementById('AddEvent').addEventListener('click', function(){
+        document.getElementById('ButResult').addEventListener('click', function(){
+            ErstesEreignis();
+            });
+        });
+document.getElementById('AddEvent').addEventListener('click', function(){
+        document.getElementById('ButResult').addEventListener('click', listener, false);
+        });
+document.getElementById('AddEvent').addEventListener('click', function(){
+        document.getElementById('ButResult').addEventListener('click', function(){
+            DrittesEreignis();
+            });
+        });
+/*
+alle Ereignisse werden ausgeführt
+*/
+document.getElementById('RemoveEv').addEventListener('click', function(){
+        document.getElementById('ButResult').removeEventListener('click', listener, false);
+        });
+/*
+nur noch das erste und dritte Ereignis werden ausgeführt
+*/
+</script>
+</body>
+</html>

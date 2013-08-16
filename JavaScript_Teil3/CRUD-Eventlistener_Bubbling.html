@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Übung mit Events</title>
+    <meta name="description" content="Übung mit HTML-Elementen">
+    <meta name="author" content="Olaf Thiele">
+    <meta name="keywords" content="">
+<!--
+    <link href="style.css" type="text/css" rel="stylesheet">
+-->
+</head>
+<body>
+<div id="bas">
+    <div id="abs_1"><p id="firstParagraph">Absatz 1</p></div>
+    <div id="abs_2">Absatz 2</div>
+    <div id="abs_3">Absatz 3</div>
+</div>
+
+<script>
+/*
+    
+*/
+document.getElementById('firstParagraph').addEventListener('click', function(){
+        alert("firstParagraph geklickt");
+        }, true);
+document.getElementById('abs_1').addEventListener('click', function(){
+        alert("abs_1 gebubblet");
+        }, true);
+document.getElementById('bas').addEventListener('click', function(){
+        alert("bas gebubblet");
+        }, true);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+var myPerson = {
+    var age: 18,
+	get getAge(){
+		return age;
+		}
+}
+
+    console.log(myPerson.getAge);
+

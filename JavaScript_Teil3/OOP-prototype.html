@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Events</title>
+</head>
+<body>
+<h1>Event-Listener</h1>
+<form>
+<input type="button" value="Zufallszeichen" onclick="alert((new String()).random());" />
+<script type="text/javascript">
+function zufall_intervall(a, b) {
+   var z = Math.random();
+   z *= (b – a + 1);
+   z += a;
+   return (Math.floor(z));
+}
+String.prototype.random = function() {
+   return String.fromCharCode(zufall_intervall(65, 90));
+};
+</script>
+</body>
+</html>

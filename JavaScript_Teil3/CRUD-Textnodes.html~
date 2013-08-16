@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Übung mit Textknoten</title>
+    <meta name="description" content="Textknoten">
+    <meta name="author" content="Olaf Thiele">
+    <meta name="keywords" content="">
+<!--
+    <link href="style.css" type="text/css" rel="stylesheet">
+-->
+</head>
+<body>
+<div id="bas">
+    <div id="abs_1">Absatz 1</div>
+    <div id="abs_2">Absatz 2</div>
+    <div id="abs_3">Absatz 3</div>
+</div>
+
+
+<input type="button" id="newTextNode" value="Neuen Textknoten erzeugen und anhängen" />
+<input type="button" id="getTextNode" value="Wert des Textknotens ausgeben" />
+<input type="button" id="upTextNode" value="Wert eines Textknotens ändern" />
+<input type="button" id="delTextNode" value="Wert eines Textknotens löschen" />
+<input type="button" id="removeTextNode" value="Textknoten löschen" />
+<script>
+
+/*
+    neuen Textknoten erzeugen und am Ende einhaengen 
+*/
+function newTextNode() {
+    var tNode = document.createTextNode(' und neu: 1. Absatz');
+    document.getElementById('abs_1').firstChild.appendData(tNode.nodeValue);
+
+}
+document.getElementById('newTextNode').addEventListener('click', function(){newTextNode()});
+
+/*
+    Wert eines Textknotens ausgeben
+*/
+function getTextNode() {
+    console.log(document.getElementById('abs_1').firstChild.data);
+}
+document.getElementById('getTextNode').addEventListener('click', function(){getTextNode()});
+
+/* 
+    Wert eines Textknotens aendern 
+*/
+function upTextNode() {
+    var tEnd = document.getElementById('abs_1').firstChild.data.length;
+    document.getElementById('abs_1').firstChild.replaceData(0, tEnd, 'neuer Textwert für den 1. Absatz');
+}
+document.getElementById('upTextNode').addEventListener('click', function(){upTextNode()});
+
+/* 
+    Wert eines Textknotens loeschen 
+*/
+function delTextNode() {
+    var tEnd = document.getElementById('abs_1').firstChild.data.length;
+    document.getElementById('abs_1').firstChild.deleteData(0, tEnd);
+}
+document.getElementById('delTextNode').addEventListener('click', function(){delTextNode()});
+
+</script>
+</body>
+</html>

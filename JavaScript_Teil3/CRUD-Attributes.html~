@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Übung mit HTML-Attributen</title>
+    <meta name="description" content="Übung mit HTML-Attributen">
+    <meta name="author" content="Olaf Thiele">
+    <meta name="keywords" content="">
+<!--
+    <link href="style.css" type="text/css" rel="stylesheet">
+-->
+</head>
+<body>
+<div id="bas">
+    <div id="abs_1">Absatz 1</div>
+    <div id="abs_2" title="2. Absatz">Absatz 2</div>
+    <div id="abs_3" title="3. Absatz - Titelattribut kann gelesen werden">Absatz 3</div>
+    <div id="abs_4" title="4. Absatz - Titelattribut kann gelöscht werden">Absatz 3</div>
+</div>
+
+
+<input type="button" id="NewAttr" value="Neues Attribut im 1. Absatz" />
+<input type="button" id="SetAttr" value="Attributwert setzen" />
+<input type="button" id="GetAttr" value="Attributwert lesen" />
+<input type="button" id="RemoveAttr" value="Attributwert löschen" />
+<script>
+
+/* neues Attribut erzeugen und einem Element zuweisen */
+function NewAttr() {
+    var myNewAttr=document.createAttribute('title');;
+    myNewAttr.nodeValue = '1. Absatz';
+    document.getElementById('abs_1').setAttributeNode(myNewAttr);
+}
+document.getElementById('NewAttr').addEventListener('click', function(){NewAttr()});
+
+/* Attributwert ersetzen */
+function SetAttr() {
+    document.getElementById('abs_2').setAttribute('title', 'neuer Title für Absatz 2');
+}
+document.getElementById('SetAttr').addEventListener('click', function(){SetAttr()});
+
+/* Attributwert lesen */
+function GetAttr() {
+    alert(document.getElementById('abs_3').getAttribute('title'));
+}
+document.getElementById('GetAttr').addEventListener('click', function(){GetAttr()});
+
+/* Attributwert löschen */
+function RemoveAttr() {
+    document.getElementById('abs_4').removeAttribute('title');
+}
+document.getElementById('RemoveAttr').addEventListener('click', function(){RemoveAttr()});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+Person = function() {
+    this.name = 'name';
+    this.firstname = 'firstname'
+}
+function () {
+    this.name = 'name';
+    this.firstname = 'firstname'
+}
+var John = new Person();
+console.log(John);
+/* liefert
+Person {name: "name", firstname: "firstname"}
+*/
+Person.prototype.age = 18;
+console.log(John);
+/* liefert
+Person {name: "name", firstname: "firstname"}
+*/
+John.children = 1;
+console.log(John);
+/* liefert
+Person {name: "name", firstname: "firstname", children: 1, age: 18}
+*/
+Fred = new Person();
+console.log(Fred);
+/* liefert
+Person {name: "name", firstname: "firstname", age: 18}
+*/
+

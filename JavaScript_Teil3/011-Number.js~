@@ -1,0 +1,4 @@
+/* toExponential */
+var myNumber = 3210.0123456789
+console.log( myNumber.toExponential() );
+

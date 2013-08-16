@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML vs. innerText</title>
+    <meta name="description" content="Übung mit HTML-Elementen">
+    <meta name="author" content="Olaf Thiele">
+    <meta name="keywords" content="">
+<!--
+    <link href="style.css" type="text/css" rel="stylesheet">
+-->
+</head>
+<body>
+<script type="text/javascript">
+</head>
+
+<body class="body">
+<div id="abs_1"></div>
+<input type="button" id="setInnerText" value="Test innerText" />
+<input type="button" id="setInnerHTML" value="Test innerHTML" />
+</form>
+function ChangeContent(val){
+var content = '<h4 style='color:blue;'>Some Text</h4>';
+var obj = document.getElementById("div_1");
+    if(val==1) {
+        obj.innerText = content;
+    } else {
+        obj.innerHTML = content;
+    }
+}
+document.getElementById('setInnerText').addEventListener('click', function(){ChangeContent(1)})
+document.getElementById('setInnerText').addEventListener('click', function(){ChangeContent()})
+</script>
+</body>
+</html>

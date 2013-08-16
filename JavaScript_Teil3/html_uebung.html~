@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <titel></titel>
+  <style>
+
+    .neueKlasse{font-family: Arial; font-size: 20pt; color:pink; background-color:yellow;}
+
+  </style>
+
+  </head>
+
+  <body>
+
+<div>
+  <ul>
+    <li class='Listenelement'>Listenelement1</li>
+    <li class='Listenelement'>Listenelement2</li>
+    <li class_='Listenelement'>Listenelement3</li>
+  </ul>
+</div>
+
+<div>
+ <span>Spanelement</span> <span class='Listenelement'>Listenelement Span</span>
+</div>
+
+<div>
+  <div id='highestDiv'>  
+    <div id='middleDiv'></div>
+      <div>Text1</div> 
+    <div id='innersDiv'>Text2</div>
+      <div>Text3</div>
+  </div>
+   <div> Text4</div>
+
+  <div>
+
+  </div>
+</div>
+
+
+
+<p id='Absatz1'>Erster Absatz</p>
+<p id='Absatz2'>Zweiter Absatz</p>
+<p id='Absatz3'>Dritter Absatz</p>
+<p id='Absatz4'>Vierter Absatz</p>
+
+  </body>
+
+</html>

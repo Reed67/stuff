@@ -1,0 +1,6 @@
+var tmpStr = '{"name":"name","firstname":"firstname","age":18}';
+var Person = JSON.parse(tmpStr);
+console.log(Person);
+var tmpArr = '["name","firstname",18]';
+var Arr  = JSON.parse(tmpArr);
+console.log(Arr);
