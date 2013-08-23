@@ -1,0 +1,49 @@
+Shell-Befehle
+
+ls 		-> Liste
+
+--help		-> hilfe für den Befehl
+
+man ls		-> zeigt Doku des Befehls
+
+ls -lisa	-> Parameter anzeigen
+
+cd 		-> Verzeichnis wechseln
+
+vi/nano		-> Editor
+
+cp		-> Kopieren
+
+rm		-> Löschen
+
+locate		-> Dateien suchen
+
+find		-> Dateien suchen (vorher such DB anlegen lassen > updatedb)
+
+which		-> Kommando suche ( wo das Kommando liegt)
+
+tar/gzip	-> Packprogramme/Kompremierung
+
+ps 		-> Prozess des Benutzers
+
+top		-> alle Prozess im Live-Stream
+
+htop		-> Prozesse mit Ressourcen verbrauch
+
+du		-> Speicher bedarf der einzelnen Daten
+
+df		-> Zeigt Partitionierung + Freien SPeicher
+
+hostname	-> Name des Rechners
+
+ifconfig	-> IP Konfiguration anzeigen lassen
+
+ifup/ifdown	-> LAN-Controller hoch/runterfahren
+
+nmap		-> Netzwerkanalyse
+
+netstat		-> Analyse eigenen Netzwerkes
+
+traceroute	-> hops bis zur Domain
+
+wget		-> zum downloaden vorhandener Dateien auf der Domain

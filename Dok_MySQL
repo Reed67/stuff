@@ -1,0 +1,25 @@
+MySQL
+
+InnerJoin:
+
+select Vname,NName,Titel FROM Autor JOIN Buch ON Autor_ID = Buch_ID;
+
+kürzer:
+
+select * FROM Autor, Buch WHERE Autor_ID = Buch_ID;
+
+InnerJoin mit LEFT JOIN:
+
+select Vname,NName,Titel FROM Autor LEFT JOIN Buch ON Autor_ID = Buch_ID;
+
+  -> bringt einen Eintrag mehr
+
+select Vname,NName,Titel FROM Autor LEFT JOIN Buch ON Autor_ID = ID WHERE Titel IS NULL;
+
+  -> InnerJOIN abfrage wo keine Übereinstimmungen
+
+Joins mit USING
+
+select Vname,NName,Titel FROM Autor JOIN Buch USING (ID);
+
+select Vname,NName,Titel FROM Autor NATURAL JOIN Buch;
