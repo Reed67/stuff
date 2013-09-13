@@ -1,0 +1,33 @@
+<?php
+$title = 'Logintest';
+$this->headTitle = $title;
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('index', array('action'=>'newUser'));?>">create new User.</a>
+</p>
+<p>
+    <a href="<?php echo $this->url('index', array('action'=>'login'));?>">Login Now!</a>
+</p>
+<p>
+<?php echo $message;?>
+</p>
+<p>
+<?php if($loggedin){echo "logged in";}else{echo "not logged in";} ?>
+</p>
+<p>
+    <?php if($loggedin){echo "<a href=\"".$this->url('index', array('action'=>'logout'))."\">Logout Now!</a>";}?>
+</p>
+<p>
+    <?php
+
+    if ($loggedin) {
+        echo "Die jetzige Nummer ist: " . $number . "<br>";
+        echo "Die Nächste Nummer ist: ";
+        echo "<a href=\"" . $this->url('index', array('action' => 'bigger')) . "\">Größer!</a>";
+        echo "<a href=\"" . $this->url('index', array('action' => 'smaller')) . "\">Kleiner!</a>";
+        echo "<br>";
+        echo "Punktzahl :".$score." nach ".$tries.". Versuchen. (".number_format($score/$tries*100,3)."%)";
+    }
+    ?>
+</p>

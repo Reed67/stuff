@@ -1,0 +1,11 @@
+<?php
+//module/SanAuth/view/san-auth/auth/login.phtml
+$form = $this->form;
+$form->setAttribute('action', $this->url('login', array('action' => 'authenticate')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('login'));
+echo $this->formRow($form->get('password'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
